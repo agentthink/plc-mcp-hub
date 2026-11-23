@@ -1,0 +1,36 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: input
+    id: backend
+    attributes:
+      label: Backend
+      placeholder: codesys / haiwell / tia-portal / ...
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: MCP client
+      placeholder: Claude Code 2.x / VS Code Copilot / Codex CLI / Cursor / ...
+  - type: input
+    id: software
+    attributes:
+      label: Vendor software, version, CPU, UI language
+      placeholder: CODESYS V3.5 SP21, Control Win V3 x64, English
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and tool calls
+      description: Remove customer data and secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected vs. actual
+    validations:
+      required: true

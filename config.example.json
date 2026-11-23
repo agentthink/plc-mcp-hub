@@ -1,0 +1,82 @@
+{
+  "backends": {
+    "gxworks2": {
+      "vendor": "mitsubishi",
+      "software": "GX Works2 1.580 / 1.635",
+      "command": "${GXWORKS_AGENT_DIR}\\.venv-mcp\\Scripts\\python.exe",
+      "args": ["${GXWORKS_AGENT_DIR}\\scripts\\mcp_entry.py", "--local", "--approval-mode", "ask"],
+      "cwd": "${GXWORKS_AGENT_DIR}"
+    },
+    "tia-portal": {
+      "vendor": "siemens",
+      "software": "TIA Portal V20",
+      "command": "${TIA_MCP_DIR}\\runtime\\v20\\TiaMcpServer.exe",
+      "args": ["--tia-major-version", "20", "--tia-portal-location", "C:\\Program Files\\Siemens\\Automation\\Portal V20"]
+    },
+    "cx-programmer": {
+      "vendor": "omron",
+      "software": "CX-Programmer 9.x (CP1E)",
+      "command": "${CX_MCP_DIR}\\.venv\\Scripts\\python.exe",
+      "args": ["${CX_MCP_DIR}\\server.py", "--project", "${CX_PROJECT}", "--allow-write", "--no-auto-reload-cxp"],
+      "cwd": "${CX_MCP_DIR}"
+    },
+    "outseal": {
+      "vendor": "outseal",
+      "software": "Outseal Studio 3.6",
+      "command": "${GUI_PYTHON}",
+      "args": ["-m", "outseal_mcp", "--allow-write", "--gui-python", "${GUI_PYTHON}"],
+      "cwd": "${MULTIPLC_DIR}\\backends\\outseal"
+    },
+    "haiwell": {
+      "vendor": "haiwell",
+      "software": "Haiwell Happy 2.2.13",
+      "command": "${GUI_PYTHON}",
+      "args": ["-m", "haiwell_mcp", "--allow-write", "--gui-python", "${GUI_PYTHON}"],
+      "cwd": "${MULTIPLC_DIR}\\backends\\haiwell"
+    },
+    "codesys": {
+      "vendor": "codesys",
+      "software": "CODESYS V3.5 SP21",
+      "command": "${GUI_PYTHON}",
+      "args": ["-m", "codesys_mcp", "--allow-write", "--codesys-exe", "C:\\Program Files\\CODESYS 3.5.21.0\\CODESYS\\Common\\CODESYS.exe", "--profile", "CODESYS V3.5 SP21"],
+      "cwd": "${MULTIPLC_DIR}\\backends\\codesys",
+      "env": {"PYTHONPATH": "${MULTIPLC_DIR}"}
+    },
+    "sysmac": {
+      "vendor": "sysmac",
+      "software": "Sysmac Studio 1.47 (NX/NJ)",
+      "command": "${GUI_PYTHON}",
+      "args": ["-m", "sysmac_mcp", "--allow-write", "--gui-python", "${GUI_PYTHON}"],
+      "cwd": "${MULTIPLC_DIR}\\backends\\sysmac"
+    },
+    "schneider": {
+      "vendor": "schneider",
+      "software": "EcoStruxure Machine Expert - Basic 1.3 (M221)",
+      "command": "${GUI_PYTHON}",
+      "args": ["-m", "schneider_mcp", "--allow-write", "--gui-python", "${GUI_PYTHON}"],
+      "cwd": "${MULTIPLC_DIR}\\backends\\schneider"
+    },
+    "delta": {
+      "vendor": "delta",
+      "software": "WPLSoft 2.52 (DVP-ES2/SS2)",
+      "command": "${GUI_PYTHON}",
+      "args": ["-m", "delta_mcp", "--allow-write", "--gui-python", "${GUI_PYTHON}"],
+      "cwd": "${MULTIPLC_DIR}\\backends\\delta"
+    },
+    "twincat": {
+      "vendor": "beckhoff",
+      "software": "TwinCAT XAE 4026.27 (offline TwinCAT RT x64)",
+      "command": "${GUI_PYTHON}",
+      "args": ["-m", "beckhoff_mcp", "--allow-write"],
+      "cwd": "${MULTIPLC_DIR}\\backends\\beckhoff",
+      "env": {"PYTHONPATH": "${MULTIPLC_DIR}"}
+    },
+    "gxworks3": {
+      "enabled": false,
+      "vendor": "mitsubishi",
+      "prefix": "mitsubishi_gx3_",
+      "software": "GX Works3 (no backend yet; see ROADMAP.md)",
+      "command": "unsupported"
+    }
+  }
+}

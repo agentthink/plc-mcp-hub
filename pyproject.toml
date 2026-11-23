@@ -1,0 +1,25 @@
+[project]
+name = "multi-plc-agent"
+dynamic = ["version"]
+description = "One MCP server for ladder engineering in GX Works2, TIA Portal, CX-Programmer, Sysmac Studio, CODESYS, TwinCAT, Machine Expert - Basic, WPLSoft, Outseal Studio and Haiwell Happy."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+authors = [{ name = "Wayan Dadang" }]
+dependencies = []
+
+[project.scripts]
+multi-plc-agent = "multiplc.__main__:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["multiplc"]
+
+[tool.setuptools.package-data]
+multiplc = ["client_sources.json"]
+
+[tool.setuptools.dynamic]
+version = { attr = "multiplc.__version__" }
